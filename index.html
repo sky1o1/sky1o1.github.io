@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="icon" href="img/git.png">
+    <title>Aakash</title>
+</head>
+
+<body>
+
+<div id="load">
+    <img src="img/ini.gif">
+</div>
+
+<div class="main" id="mainContainer" hidden>
+  <img id="ProfileImage" width="150px" height="150px">
+  <h2 id="fullname"></h2>
+  <h3 id="bio"></h3>
+  <h3 id="followersInformation"></h3>
+  
+  <p>Visit My Github Profile <a id="githublink" target="_blank" rel="nofollow" >Github</a></p>
+</div>
+
+<div class="insta">
+    <p>
+    <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+    <div class="elfsight-app-060d16a5-dfdf-40f2-870b-fed357feae19"></div>
+    </p>
+</div>
+
+<div class="repository" id="repoId" hidden>
+    <h2>My Projects</h2>
+    <p>Repositories <a id="repo" target="_blank" rel="nofollow" >Repo</a></p>
+</div>
+
+
+<script>
+    fetch("https://api.github.com/users/sky1o1")
+    .then(response => response.json())
+    .then(function (data) {
+
+      let followerscount = data['followers'] 
+      let followersInfo = `I have been followed by ${followerscount} awesome People on Github`
+
+      document.getElementById('ProfileImage').src = data['avatar_url']
+     
+      document.getElementById('fullname').textContent = data['name']
+      document.getElementById('bio').textContent = data['bio']
+      document.getElementById('followersInformation').textContent = followersInfo
+      document.getElementById('githublink').href = data['html_url']
+      document.getElementById('repo').href = data['repos_url']
+      document.getElementById('load').hidden=true
+      document.getElementById('mainContainer').hidden=false
+      document.getElementById('repoId').hidden=false
+      console.log(data['repos_url']['name'])
+
+      var len = data['repos_url'].length
+
+    //   for (i=0; i<len; i++)
+    //     document.getElementById('repo').href = data['repos_url'][i]
+    //   }
+
+    })
+</script>
+</body>
+</html>
