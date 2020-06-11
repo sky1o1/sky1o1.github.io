@@ -1,0 +1,55 @@
+body{
+    background-image: url(../img/bg.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#load{
+    text-align: center;
+    background-size: cover;
+}
+
+#ProfileImage{
+    border-style: groove;
+    border-color: blueviolet;
+    height: 230px;
+    width: auto;
+}
+
+.main{
+    color: white;
+    border-style: groove;
+    border-color: violet;
+    padding-top: 20px;
+    margin-top: 50px;
+    height: 450px;
+    width: 500px;
+    margin-left: 400px;
+    text-align: center;
+    overflow: auto;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.5);
+    -webkit-backdrop-filter: blur(5px); 
+    backdrop-filter: blur(5px);
+}
+
+.repository{
+    text-align: center;
+    color: white;
+    border-style: groove;
+    border-color: violet;
+     overflow: auto;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.5);
+    -webkit-backdrop-filter: blur(5px); 
+    backdrop-filter: blur(5px);
+
+}
+
+.insta{
+    margin-left: 525px;
+}
+
+#load{
+        background-size: contain;
+}
