@@ -32,6 +32,9 @@
 <div class="repository" id="repoId" hidden>
     <h2>My Projects</h2>
     <p>Repositories <a id="repo" target="_blank" rel="nofollow" >Repo</a></p>
+    <ol>
+        <li id='list'></li>
+    </ol>
 </div>
 
 
@@ -53,15 +56,39 @@
       document.getElementById('load').hidden=true
       document.getElementById('mainContainer').hidden=false
       document.getElementById('repoId').hidden=false
-      console.log(data['repos_url']['name'])
 
-      var len = data['repos_url'].length
+    //   var len = data['repos_url'].length
 
     //   for (i=0; i<len; i++)
     //     document.getElementById('repo').href = data['repos_url'][i]
     //   }
 
     })
+
+    fetch('https://api.github.com/users/sky1o1/repos')
+    .then(response => response.json())
+    .then(function (data) {
+
+       let repo_length = data.length
+        console.log(repo_length)
+        for(i=0; i<repo_length; i++){
+            console.log(data[i]['name'])
+            document.getElementById('list').textContent=data[i]['name']
+        }
+
+        let new_element = document.createElement('li');
+        [ol].appendChild(new_element);
+
+
+        [data].forEach(element => {
+    const repoCard = document.createElement('li');
+    repoCard.classList.add('repo-card');
+   repoCard.textContent = element['name'];
+   [ol].appendChild(repoCard);
+    })
+
+    })
+
 </script>
 </body>
 </html>

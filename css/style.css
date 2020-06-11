@@ -25,6 +25,7 @@ body{
     height: 450px;
     width: 500px;
     margin-left: 400px;
+    text-decoration: none;
     text-align: center;
     overflow: auto;
     position: relative;
@@ -51,5 +52,5 @@ body{
 }
 
 #load{
-        background-size: contain;
+        background-size: cover;
 }
