@@ -1,8 +1,8 @@
 window.onload = function () {
   const repo_list = document.getElementById("repo-list")
   let currentPageNumber = 1
-  let max_page = 
   document.getElementById('load').hidden = true
+  document.getElementById('mainContainer').hidden = false
   //load info
   loadInfo()
 
