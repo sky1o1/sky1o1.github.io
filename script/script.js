@@ -1,8 +1,6 @@
 window.onload = function () {
   const repo_list = document.getElementById("repo-list")
   let currentPageNumber = 1
-  document.getElementById('load').hidden = true 
-  document.getElementById('mainContainer').hidden = false 
   //load info
   loadInfo()
 
@@ -18,14 +16,14 @@ window.onload = function () {
       let followerscount = data['followers'] 
       let followersInfo = `I have been followed by ${followerscount} awesome People on Github`
 
+      document.getElementById('load').hidden = true 
+      document.getElementById('mainContainer').hidden = false 
       document.getElementById('ProfileImage').src = data['avatar_url']
-     
       document.getElementById('fullname').textContent = data['name']
       document.getElementById('bio').textContent = data['bio']
       document.getElementById('followersInformation').textContent = followersInfo
-      var lin = document.getElementById('githublink').href = data['html_url']
-      document.getElementById('repo').href = data['repos_url']
-      console.log(lin)
+      document.getElementById('githublink').setAttribute("href",data['html_url'])
+      document.getElementById('repo').setAttribute("href",data['repos_url'])
       
 
     })
