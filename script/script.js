@@ -23,7 +23,7 @@ window.onload = function () {
       document.getElementById('bio').textContent = data['bio']
       document.getElementById('followersInformation').textContent = followersInfo
       document.getElementById('githublink').setAttribute("href",data['html_url'])
-      document.getElementById('repo').setAttribute("href",data['repos_url'])
+      document.getElementById('repoId').setAttribute("href",data['repos_url'])
       
 
     })
