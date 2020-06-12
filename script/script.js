@@ -18,7 +18,7 @@ window.onload = function () {
 
       document.getElementById('load').hidden = true 
       document.getElementById('mainContainer').hidden = false 
-      document.getElementById('instaId').hidden = false 
+     
       document.getElementById('repoId').hidden = false 
 
       document.getElementById('ProfileImage').src = data['avatar_url']
