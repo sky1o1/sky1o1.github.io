@@ -1,8 +1,7 @@
 window.onload = function () {
   const repo_list = document.getElementById("repo-list")
   let currentPageNumber = 1
-  document.getElementById('load').hidden = true
-  document.getElementById('mainContainer').hidden = false
+  document.getElementById('load').hidden = true 
   //load info
   loadInfo()
 
