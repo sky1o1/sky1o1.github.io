@@ -1,3 +1,7 @@
+html{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 body{
     background-image: url(../img/bg.jpg);
     background-attachment: fixed;
@@ -36,6 +40,7 @@ body{
 
 .repository{
     text-align: center;
+    height: 500px;
     color: white;
     border-style: groove;
     border-color: violet;
@@ -53,4 +58,28 @@ body{
 
 #load{
         background-size: cover;
+}
+
+#repo-list {
+    width:30%;
+    margin:0 auto;
+    height: 370px;
+}
+#repo-list > a  {
+    display: block;
+    text-decoration: none;
+    font-size: 22px;
+    
+}
+
+.repo-card {
+    background-color: rgb(255, 255, 255);
+    padding:15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
 }

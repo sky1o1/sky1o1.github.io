@@ -13,13 +13,13 @@
     <img src="img/ini.gif">
 </div>
 
-<div class="main" id="mainContainer" hidden>
+<div class="main" id="mainContainer">
   <img id="ProfileImage" width="150px" height="150px">
   <h2 id="fullname"></h2>
   <h3 id="bio"></h3>
   <h3 id="followersInformation"></h3>
   
-  <p>Visit My Github Profile <a id="githublink" target="_blank" rel="nofollow" >Github</a></p>
+  <p>Visit My Github Profile <button><a id="githublink" target="_blank" rel="nofollow" >Github</a></button></p>
 </div>
 
 <div class="insta">
@@ -29,33 +29,37 @@
     </p>
 </div>
 
-<div class="repository" id="repoId" hidden>
+<div class="repository" id="repoId">
     <h2>My Projects</h2>
-    <p>Repositories <a id="repo" target="_blank" rel="nofollow" >Repo</a></p>
-    <ol>
-        <li id='list'></li>
-    </ol>
+    <p>Repositories</p>
+
+    <div id="repo-list"> 
+    </div>
+        <button id="prevBtn">Prev</button>
+        <button id="nextBtn">Next</button>
 </div>
 
 
-<script>
-    fetch("https://api.github.com/users/sky1o1")
-    .then(response => response.json())
-    .then(function (data) {
+<script src="./script/script.js"></script>
 
-      let followerscount = data['followers'] 
-      let followersInfo = `I have been followed by ${followerscount} awesome People on Github`
+<!-- <script>
+    // fetch("https://api.github.com/users/sky1o1")
+    // .then(response => response.json())
+    // .then(function (data) {
 
-      document.getElementById('ProfileImage').src = data['avatar_url']
+    //   let followerscount = data['followers'] 
+    //   let followersInfo = `I have been followed by ${followerscount} awesome People on Github`
+
+    //   document.getElementById('ProfileImage').src = data['avatar_url']
      
-      document.getElementById('fullname').textContent = data['name']
-      document.getElementById('bio').textContent = data['bio']
-      document.getElementById('followersInformation').textContent = followersInfo
-      document.getElementById('githublink').href = data['html_url']
-      document.getElementById('repo').href = data['repos_url']
-      document.getElementById('load').hidden=true
-      document.getElementById('mainContainer').hidden=false
-      document.getElementById('repoId').hidden=false
+    //   document.getElementById('fullname').textContent = data['name']
+    //   document.getElementById('bio').textContent = data['bio']
+    //   document.getElementById('followersInformation').textContent = followersInfo
+    //   document.getElementById('githublink').href = data['html_url']
+    //   document.getElementById('repo').href = data['repos_url']
+    //   document.getElementById('load').hidden=true
+    //   document.getElementById('mainContainer').hidden=false
+    //   document.getElementById('repoId').hidden=false
 
     //   var len = data['repos_url'].length
 
@@ -65,30 +69,37 @@
 
     })
 
-    fetch('https://api.github.com/users/sky1o1/repos')
-    .then(response => response.json())
-    .then(function (data) {
+    // const repo_list = document.getElementById("repo-list")
+    // fetch('https://api.github.com/users/sky1o1/repos?page='+ 1 +'&per_page=2')
+    // .then(response => response.json())
+    // .then(function (data) {
 
-       let repo_length = data.length
-        console.log(repo_length)
-        for(i=0; i<repo_length; i++){
-            console.log(data[i]['name'])
-            document.getElementById('list').textContent=data[i]['name']
-        }
+//        let repo_length = data.length
+//         console.log(repo_length)
+//         for(i=0; i<repo_length; i++){
+//             console.log(data[i]['name'])
+//             document.getElementById('list').textContent=data[i]['name']
+//         }
 
-        let new_element = document.createElement('li');
-        [ol].appendChild(new_element);
+//         let new_element = document.createElement('li');
+//         [ol].appendChild(new_element);
 
 
-        [data].forEach(element => {
-    const repoCard = document.createElement('li');
-    repoCard.classList.add('repo-card');
-   repoCard.textContent = element['name'];
-   [ol].appendChild(repoCard);
-    })
+//         [data].forEach(element => {
+//     const repoCard = document.createElement('li');
+//     repoCard.classList.add('repo-card');
+//    repoCard.textContent = element['name'];
+//    [ol].appendChild(repoCard);
+//     })
+    // data.forEach(element => {
+    //     const pElement = document.createElement("a")
+    //     pElement.setAttribute("href",element['html_url'])
+    //     pElement.innerText = element['name']
+    //     repo_list.append(pElement)
+    // })
 
-    })
+    // })
 
-</script>
+</script> -->
 </body>
 </html>
